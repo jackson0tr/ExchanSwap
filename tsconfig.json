@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    // "paths": {
+    // },
+    "baseUrl": "./",
+    "paths": {
+      "@paddle/*": ["node_modules/@paddle/*"],
+      "@/*": ["./*"],
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Sections/Swiper.jsx", "app/utils/ActiveSlider.jsx", "app/data/data.js", "app/components/Sections/Plans.tsx", "app/components/Sections/Sponsered.tsx", "app/utils/PracticlesBG.tsx", "app/utils/ParticlesComponent.jsx", "app/utils/usePaddle.js", "redux/reducers/plan.tsx"],
+  "exclude": ["node_modules"]
+}

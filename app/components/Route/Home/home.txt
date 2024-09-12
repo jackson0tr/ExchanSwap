@@ -1,0 +1,37 @@
+'use client';
+import React, { FC } from "react";
+import Hero from "../../Sections/Hero";
+import Services from "../../Sections/Services";
+import Plans from "../../Sections/Plans";
+import Sponsored from "../../Sections/Sponsered";
+import Reviews from "../../Sections/Reviews";
+import ApiDocs from "../../Sections/ApiDocs";
+import Docs from "../../Sections/Docs";
+import Contact from "../../Sections/Contact";
+import Signin from "../../Sections/Signin";
+
+type Props = {
+    open: boolean;
+    setOpen: (open: boolean) => void;
+    activeItem: number;
+    route: string;
+    setRoute: (route: string) => void;
+
+}
+
+export const Home: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
+    return (
+        <>
+            <ApiDocs />
+            <div className="relative lg:max-w-[1200px] my-0 mx-auto">
+                <Services />
+                <Plans />
+                <Docs />
+                <Sponsored />
+                <Reviews />
+            </div>
+            <Contact />
+
+        </>
+    )
+}
