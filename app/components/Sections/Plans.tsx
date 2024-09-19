@@ -51,7 +51,7 @@ const Plans = () => {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        const response = await axiosApi.patch(`/subscription/${price_id}`, {
+        const response = await axiosApi.post(`/subscription`, {price_id}, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
