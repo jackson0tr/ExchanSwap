@@ -363,7 +363,7 @@ input::-webkit-inner-spin-button {
 
 /* Plans */
 
-body {
+.plans_body {
   background-color: #181828;
 }
 
@@ -865,9 +865,9 @@ figure {
 }
 
 
-body {
+/* body {
   color: #5f727f;
-}
+} */
 
 .pricing-column {
   float: none;

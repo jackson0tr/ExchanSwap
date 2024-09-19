@@ -134,18 +134,18 @@ const Plans = () => {
               </h2>
               <div className="flex justify-center space-x-4 mb-6">
                 <button
-                  className={`px-4 py-2 border rounded ${planType === 'monthly' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`}
+                  className={`px-4 py-2 border rounded ${planType === 'monthly' ? 'bg-blue-500 text-white' : 'bg-white text-slate-700'}`}
                   onClick={() => setPlanType('monthly')}>
                   Monthly
                 </button>
                 <button
-                  className={`px-4 py-2 border rounded ${planType === 'yearly' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`}
+                  className={`px-4 py-2 border rounded ${planType === 'yearly' ? 'bg-blue-500 text-white' : 'bg-white text-slate-700'}`}
                   onClick={() => setPlanType('yearly')}>
                   Yearly
                 </button>
               </div>
             </div>
-
+            <div className="plans_body">
             <div id="mainCoantiner">
               <div className="margin-body">
 
@@ -206,7 +206,7 @@ const Plans = () => {
                 </div>
               </div>
             </div>
-
+            </div>
           </section>
         )
       }

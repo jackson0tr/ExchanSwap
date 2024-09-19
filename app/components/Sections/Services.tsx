@@ -31,7 +31,7 @@ const Services = () => {
         {
           ServiceData.map((item: any, index: number) => (
             <div className='border border-solid border-[#2190ff] custom_bg flex flex-col py-10 md:px-6 px-4 rounded-lg shadow-3xl' key={index}>
-              <h3 className='text-3xl p-2 font-bold text-center text-[#fff]'>{item.title}</h3>
+              <h2 className='text-2xl p-2 font-bold text-center text-[#fff]'>{item.title}</h2>
                   <p className="text-[18px] p-2 text-[#fff]">{item.content}</p>
             </div>
           ))

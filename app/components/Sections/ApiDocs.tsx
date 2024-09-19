@@ -68,7 +68,7 @@ const ApiDocs: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, refetc
               </p>
               <button onClick={() => setOpen(true)} className="px-6 py-2 border border-[#2190ff] custom_bg text-[#fff] font-bold rounded-full hover:bg-gray-200">
                 {
-                  user ? <Link passHref href='/profile'>
+                  user ? <Link rel='preload' passHref href='/profile'>
                     Profile
                   </Link> : 'Sign Up'
                 }
