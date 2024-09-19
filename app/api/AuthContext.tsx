@@ -24,7 +24,12 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
-
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      getProfile();
+    }
+  }, []);
 
   const login = async (email: string, password: string) => {
     try {

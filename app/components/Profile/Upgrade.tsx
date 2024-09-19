@@ -1,13 +1,8 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
-import { IoMdCall } from 'react-icons/io';
-import { motion, useScroll, useTransform } from "framer-motion";
-import { style } from '@/app/utils/style';
+import React, { FC, useEffect, useState } from 'react';
 import axiosApi from '@/app/api/axios';
 import { toast } from 'react-hot-toast';
 import Loader from '../Layout/Loader/Loader';
-import { MdDescription } from 'react-icons/md';
 import { initializePaddle, Paddle } from '@paddle/paddle-js';
-import { FcApproval } from 'react-icons/fc';
 import Link from 'next/link';
 
 
@@ -56,7 +51,7 @@ const Upgrade: FC<Props> = ({ user, data }) => {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        const response = await axiosApi.patch(`/subscription/2${ price_id }`, {
+        const response = await axiosApi.patch(`/subscription/2/${ price_id }`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

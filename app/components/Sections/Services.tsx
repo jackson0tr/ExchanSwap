@@ -23,9 +23,9 @@ const Services = () => {
     <section id='services' className=" flex items-center justify-center bg-[#fff] flex-col">
       <div className="mt-10 pb-3 800px:pb-0 ">
         <div className="flex flex-col items-center text-center mt-[20px]">
-          <h4 className="text-slate-700 text-[30px] px-3 w-full font-[600] py-2 ">
+          <h1 className="text-slate-700 text-[30px] px-3 w-full font-[600] py-2 ">
             Most popular currency tools
-          </h4>
+          </h1>
           <br />
           <div className="grid grid-cols-1 800px:grid-cols-3 gap-10 mt-20 md:w-11/12 mx-auto">
         {

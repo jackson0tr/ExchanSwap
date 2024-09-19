@@ -31,9 +31,9 @@ const Nav: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, refetch })
     const { user, getProfile }: any = useContext(AuthContext);
     const [mobileNav, setMobileNav] = useState(false);
 
-    useEffect(() => {
-        getProfile();
-    }, []);
+    // useEffect(() => {
+    //     getProfile();
+    // }, []);
 
 
     if (typeof window !== "undefined") {
