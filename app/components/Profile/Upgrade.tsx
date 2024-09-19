@@ -56,7 +56,7 @@ const Upgrade: FC<Props> = ({ user, data }) => {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        const response = await axiosApi.patch(`/subscription/${ price_id }`, {
+        const response = await axiosApi.patch(`/subscription/2${ price_id }`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
