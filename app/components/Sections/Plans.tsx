@@ -9,6 +9,7 @@ import { toast } from 'react-hot-toast';
 import Loader from '../Layout/Loader/Loader';
 import { FcApproval } from "react-icons/fc";
 import Link from 'next/link';
+import { FaCheck } from 'react-icons/fa';
 
 interface Plan {
   id: number;
@@ -171,8 +172,9 @@ const Plans = () => {
                         </div>
                         {plan.features.map((feature: string) => {
                           return (
-                            <div key={feature} >
-                              <figure className="pricing-row">{feature}</figure>
+                            <div key={feature}>
+                              <figure className="pricing-row"><span className='check_icon'>✔</span> {feature}</figure>
+                              {/* <figure className="pricing-row figure">✔ {feature}</figure> */}
                             </div>
                           );
                         })}

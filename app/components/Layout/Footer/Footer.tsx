@@ -6,13 +6,14 @@ import logo from '../../../assets/logo.svg';
 const Footer = () => {
     return (
         <footer>
-            <div className="border border-[#000000e] dark:border-[#ffffff1e]" />
+            <div className="border border-[#000000e] " />
             <br />
             <div className="w-[95%] 800px:w-full 800px:max-w-[85%] mx-auto px-2 sm:px-6 lg:px-8 ">
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
                     <div className="space-y-3">
                         <Link href={"/"}>
                             <Image
+                                priority
                                 width={50}
                                 height={30}
                                 src={logo}
@@ -44,7 +45,7 @@ const Footer = () => {
                     </div>
                     <div className="space-y-3">
                         <h1 className="text-[20px] font-[600] text-slate-700 ">
-                            Fast <span className='text-[#2190ff]'>Links</span>
+                            Fast Links
                         </h1>
                         <ul className='space-y-4'>
                             <li>
@@ -70,8 +71,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="space-y-3">
-                        <h1 className="text-[20px] font-[600] text-[#2190ff] ">
-                            Social <span className='text-slate-700'>Links</span>
+                        <h1 className="text-[20px] font-[600] text-slate-700 ">
+                            Social Links
                         </h1>
                         <ul className='space-y-4'>
                             <li>
@@ -93,11 +94,11 @@ const Footer = () => {
                     </div>
                     <div>
                         <h1 className="text-[20px] font-[600] text-slate-700  pb-3">
-                            Contact <span className='text-[#2190ff]'>INFO</span>
+                            Contact INFO
                         </h1>
-                        <p className='text-base text-slate-700  dark:hover:text-[#2190ff] pb-2'>
+                        <p className='text-base text-slate-700 pb-2'>
                             Send to US:{' '}
-                            <Link className="border-b border-[#2190ff] dark:border-[#2190ff] border-solid dark:text-[#23bd70] text-[#2190ff]" href={`mailto:exchanswap@gmail.com`}>
+                            <Link className="border-b border-[#2190ff]  border-solid  text-[#2190ff]" href={`mailto:exchanswap@gmail.com`}>
                                 exchanswap@gmail.com
                             </Link>
                         </p>

@@ -31,9 +31,9 @@ const Nav: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, refetch })
     const { user, getProfile }: any = useContext(AuthContext);
     const [mobileNav, setMobileNav] = useState(false);
 
-    // useEffect(() => {
-    //     getProfile();
-    // }, [])
+    useEffect(() => {
+        getProfile();
+    }, []);
 
 
     if (typeof window !== "undefined") {
@@ -65,6 +65,7 @@ const Nav: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, refetch })
                             <Link href={"/"}
                                 className={`text-[25px] font-Poppins font-[500] text-[#2190ff] dark:text-white`}>
                                 <Image
+                                    priority
                                     width={100}
                                     height={100}
                                     src={logo}

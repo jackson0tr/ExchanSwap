@@ -56,7 +56,7 @@ const Upgrade: FC<Props> = ({ user, data }) => {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        const response = await axiosApi.post('/subscription', { price_id }, {
+        const response = await axiosApi.post(`/subscription/${ price_id }`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -160,7 +160,7 @@ const Upgrade: FC<Props> = ({ user, data }) => {
                   <div className="starfourth"></div>
                   <div className="starfifth"></div>
                 </div>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 800px:grid-cols-4 1500px:grid-cols-5">
+                <div className="grid grid-cols-1 gap-6 800px:grid-cols-3 1500px:grid-cols-4">
                   {Array.isArray(plans) && plans.map((plan, index) => (
                     <div className="p-[20px] pricing-column-wrapper col-sm-3 col-md-3" key={index}>
                       <div className="pricing-column">
@@ -178,7 +178,8 @@ const Upgrade: FC<Props> = ({ user, data }) => {
                         {plan.features.map((feature: string) => {
                           return (
                             <div key={feature} >
-                              <figure className="pricing-row">{feature}</figure>
+                              <figure className="pricing-row"><span className='check_icon'>✔</span> {feature}</figure>
+                              {/* <figure className="pricing-row">{feature}</figure> */}
                             </div>
                           );
                         })}

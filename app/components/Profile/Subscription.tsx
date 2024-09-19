@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { IoMdCall } from 'react-icons/io';
 import { motion } from "framer-motion";
 import { style } from '@/app/utils/style';
@@ -55,19 +55,27 @@ const Subscription: FC<Props> = ({ user, data }) => {
         }
     }
 
+    const [apiKey, setApiKey] = useState<string | null>(null);
+
+     useEffect(() => {
+        if (subscription && subscription.api_key) {
+            setApiKey(subscription.api_key);
+        }
+    }, [subscription]);
+
     const resetApi = async () => {
         try {
             const token = localStorage.getItem('token');
             if (token) {
-                await axiosApi.get(`/subscription/reset_key`, {
+                const response = await axiosApi.get(`/subscription/reset_key`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 });
+                const newApiKey = response.data.data.api_key; 
+                setApiKey(newApiKey);
                 toast.success("Reset Api Key successfully");
-                window.location.reload();
             } else {
-                console.error('No token found');
                 toast.error('No token found');
             }
         } catch (error: any) {
@@ -75,6 +83,8 @@ const Subscription: FC<Props> = ({ user, data }) => {
             toast.error(error);
         }
     }
+
+    const isMainPlan = subscription.price === 0;
 
     return (
         <>
@@ -117,35 +127,64 @@ const Subscription: FC<Props> = ({ user, data }) => {
                                     </div>
                                     <div className="flex items-center space-x-4">
                                         <IoMdCall className='w-4 h-4 text-[#2190ff]' />
-                                        <p className="text-[18px] text-slate-700">{subscription.currenct_calls} Current Calls</p>
+                                        <p className="text-[18px] text-slate-700">{subscription.currenct_calls === 0 || null ? 'No Current Calls' : `${subscription.currenct_calls} Current Calls`}</p>
                                     </div>
-                                    <div className='flex items-center space-x-4 te0xt-[22px] font-0normal text-[#2190ff]'>
+                                    <div className='flex items-center space-x-4 te0xt-[22px] font-0normal text-slate-700'>
                                         Ends At: 
                                         <span className='tex0t-[18px] text-red-600'>
                                             {" "}{subscription?.ends_at}
                                         </span>
                                     </div>
                                     <div className='flex items-center 800px:flex-row flex-col space-x-4'>
-                                        <div className='tex0t-[22px] fon0t-normal text-[#2190ff]'>
+                                        <div className='tex0t-[22px] fon0t-normal text-slate-700'>
                                             API Key:
                                         </div>
                                         <div className="border rounded-lg p-3 800px:w-auto w-full overflow-hidden overflow-x-scroll custom_bg flex items-center border-solid border-[#2190ff] ">
                                             <p className='text-center flex text-[#fff] font-[600] te5xt-[16px]'>
-                                                {subscription?.api_key}
+                                                {apiKey}
+                                                {/* {subscription?.api_key} */}
                                             </p>
                                         </div>
                                         <div onClick={resetApi} className='cursor-poniter'>
-                                            <VscDebugRestart size={30} className="cursor-poniter text-[#2190ff] m-2"/>
+                                            <VscDebugRestart size={30} className="text-[#2190ff] m-2"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className='w-full p-3 flex justify-between flex-col 800px:flex-row'>
-                                <button onClick={restore} className="btn">
+                            <div className="relative group">
+                                    <button 
+                                        onClick={restore} 
+                                        className="btn" 
+                                        disabled={isMainPlan}
+                                    >
+                                        Restore
+                                    </button>
+                                    {isMainPlan && (
+                                        <div className="absolute 800px:top-full top-0 left-0 bg-black text-white text-sm p-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                            You cannot restore because this is the free plan
+                                        </div>
+                                    )}
+                                </div>
+                                {/* <button onClick={restore} className="btn">
                                     Restore
-                                </button>
+                                </button> */}
                                 <br className='800px:hidden block'/>
-                                <button className="buttonCancel noselect" onClick={cancel}><span className="text">Cancel</span><span className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button>
+                                <div className="relative group">
+                                    <button 
+                                        onClick={cancel} 
+                                        className="buttonCancel noselect" 
+                                        disabled={isMainPlan}
+                                    >
+                                        <span className="text">Cancel</span><span className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span>
+                                    </button>
+                                    {isMainPlan && (
+                                        <div className="absolute 800px:top-full top-0 left-0 bg-black text-white text-sm p-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                            You cannot cancel because this is the free plan
+                                        </div>
+                                    )}
+                                </div>
+                                {/* <button className="buttonCancel noselect" onClick={cancel}><span className="text">Cancel</span><span className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button> */}
                             </div>
                         </div>
                     </motion.div>

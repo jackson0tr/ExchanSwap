@@ -420,7 +420,7 @@ body {
   height: 70px;
   width: 70px;
 }
-
+figure
 .folio-btn-item {
   position: absolute;
   width: 40px;
@@ -817,6 +817,26 @@ figure {
   display: block;
 }
 
+.check_icon:first-child{
+  color: #00bcd4;
+}
+
+.check_icon:nth-child(2){
+  color: #3b5998;
+}
+
+.check_icon:nth-child(3){
+  color: #e83e8c;
+}
+
+.check_icon:nth-child(4){
+  color: #FF5722;
+}
+
+.check_icon:nth-child(5){
+  color: #00ffaaed;
+}
+
 figure {
   display: block;
   padding-block-start: 0.4em;
@@ -827,14 +847,14 @@ figure {
   text-align: left;
 }
 
-.pricing-row:before {
+/* .pricing-row:before {
   vertical-align: middle;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
   color: #00bfa5;
   text-align: center;
   padding-right: 10px;
-}
+} */
 
 .strike:before {
   content: none;
