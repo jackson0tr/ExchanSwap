@@ -51,12 +51,14 @@ const Upgrade: FC<Props> = ({ user, data }) => {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        const response = await axiosApi.patch(`/subscription/2/${ price_id }`, {
+        const response = await axiosApi.patch(`/subscription/2?${ price_id }`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log("price_id", price_id);
         console.log("SECOND", response.data.data);
+        console.log("price_id2", response.data.data.price_id);
         return response.data.data;
       } else {
         toast.error("Please Login");
