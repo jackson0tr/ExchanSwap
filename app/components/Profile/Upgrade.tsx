@@ -51,7 +51,7 @@ const Upgrade: FC<Props> = ({ user, data }) => {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        const response = await axiosApi.patch(`/subscription/2?${ price_id }`, {
+        const response = await axiosApi.patch(`/subscription/2${ price_id }`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -136,12 +136,12 @@ const Upgrade: FC<Props> = ({ user, data }) => {
               </h2>
               <div className="flex justify-center space-x-4 mb-6">
                 <button
-                  className={`px-4 py-2 border rounded ${planType === 'monthly' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`}
+                  className={`px-4 py-2 border rounded ${planType === 'monthly' ? 'bg-blue-500 text-white' : 'bg-white text-slate-700'}`}
                   onClick={() => setPlanType('monthly')}>
                   Monthly
                 </button>
                 <button
-                  className={`px-4 py-2 border rounded ${planType === 'yearly' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`}
+                  className={`px-4 py-2 border rounded ${planType === 'yearly' ? 'bg-blue-500 text-white' : 'bg-white text-slate-700'}`}
                   onClick={() => setPlanType('yearly')}>
                   Yearly
                 </button>

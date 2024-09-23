@@ -46,7 +46,7 @@ const Reviews = () => {
                                 ReviewData.map((item: any,index:number) => (
                                     <div className='custom_bg border border-solid border-[#2190ff] h-full text-[#fff] rounded-xl' key={index}>
                                         <div className='rounded-t-xl bg-transparent flex justify-center items-center '> 
-                                            <Image loading='lazy' src={item.img} width={90} height={90} className='h-[90px] w-[90px] p-2 rounded-full' alt='img'/>
+                                            <Image loading='lazy' src={item.img} width={60} height={60} className='h-[60px] w-[60px] p-2 rounded-full' alt='img'/>
                                         </div>
                                         <div className='flex flex-col justify-center items-center gap-4 p-4 '>
                                             <p className='text-xl font-semibold'>{item.name}</p>
