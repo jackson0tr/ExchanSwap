@@ -33,7 +33,7 @@ const Docs = () => {
           <div className='border 800px:w-1/2 flex flex-col py-10 md:px-6 px-4 rounded-lg shadow-3xl'>
             <Link href={'#plans'}>
             <h2
-            className='uppercase cursor-pointer text-base font-bold text-center flex text-[#fff] p-2 bg-[#2190ff]'>
+            className='uppercase cursor-pointer text-base font-bold text-center flex text-white p-2 bg-blue-500'>
               Get Started
             </h2>
             </Link>
@@ -49,14 +49,14 @@ const Docs = () => {
           {
             active === 1 ? (
               <div className="bg-[#fff] flex flex-col justify-center items-center">
-                <h2 className='text-[30px] font-[600] items-center text-center  text-[#2190ff] mb-2'>
+                <h2 className='text-[30px] font-[600] items-center text-center  text-slate-700 mb-2'>
                   Exchange API
                 </h2>
                 <p className='text-gray-600 p-2 items-center flex text-center '>
                   ExchanSwap API provides exchange rates of 762 currencies worldwide. This documentation provides complete details of the features and options available in this API.
                 </p>
                 <br />
-                <h2 className='text-[30px] font-[600] items-center text-center  text-[#2190ff] mb-2'>
+                <h2 className='text-[30px] font-[600] items-center text-center  text-slate-700 mb-2'>
                   Authorization
                 </h2>
                 <p className='text-gray-600 p-2 items-center flex text-center '>
@@ -66,7 +66,7 @@ const Docs = () => {
                 Once you will have created your account successfully, you will have an API key for free in your dashboard. You can use this dashboard to upgrade or downgrade your plan and monitor your API usage. We strongly discourage the use of API key in client-side JavaScript, as it will expose your API key to the public.
                 </p>
                 <br />
-                <h2 className='text-[30px] font-[600] items-center text-center  text-[#2190ff] mb-2'>
+                <h2 className='text-[30px] font-[600] items-center text-center  text-slate-700 mb-2'>
                   JSON and XML Response Formats
                 </h2>
                 <p className='text-gray-600 p-2 items-center flex text-center '>
@@ -94,21 +94,21 @@ const Docs = () => {
           {
             active === 2 ? (
               <div className="bg-[#fff] flex flex-col justify-center items-center">
-                <h2 className='text-[30px] font-[600] items-center text-center  text-[#2190ff] mb-2'>
+                <h2 className='text-[30px] font-[600] items-center text-center  text-slate-700 mb-2'>
                 Converter
                 </h2>
                 <p className='text-gray-600 p-2 items-center flex text-center '>
                 We take security seriously and serve all of our API endpoints over a secure HTTPS connection for all users, even if you are on the free plan.
                 </p>
                 <br />
-                <h2 className='text-[30px] font-[600] items-center text-center  text-[#2190ff] mb-2'>
+                <h2 className='text-[30px] font-[600] items-center text-center  text-slate-700 mb-2'>
                 Rate & Requests Limits
                 </h2>
                 <p className='text-gray-600 p-2 items-center flex text-center '>
                 We have hard limits on the number of requests for all paid and free plans. Once you reach the quota of the subscribed plan, we will stop serving your requests. For free plan, we send one email notification when you reach your quota. For paid plans, we send three notification emails on 80%, 90% and 100% usage, respectively. Other than the above mentioned hard limit, we do not have any daily or hourly rate limits on any of our plans. You can consume all of your monthly/yearly quota in a single day. Please visit our pricing section for allowed requests limit in each plan.
                 </p>
                 <br />
-                <h2 className='text-[30px] font-[600] items-center text-center  text-[#2190ff] mb-2'>
+                <h2 className='text-[30px] font-[600] items-center text-center  text-slate-700 mb-2'>
                 Supported Currencies
                 </h2>
                 <p className='text-gray-600 p-2 items-center flex text-center '>

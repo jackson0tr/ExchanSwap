@@ -55,7 +55,7 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
                 {
                     navItemsData && navItemsData.map((item, index) => (
                         <Link href={`${item.url}`} key={index} passHref>
-                            <span className={`${activeItem === index ? "text-[#2190ff]" : "text-slate-700"}  hover:text-[#2190ff] text-[18px] px-6 font-Poppins font-[400]`}>
+                            <span className={`${activeItem === index ? "text-[#2190ff]" : "text-slate-700"}  hover:text-[#2190ff] text-slate-700 text-[18px] px-6 font-Poppins font-[400]`}>
                                 {item.name}
                             </span>
                         </Link>

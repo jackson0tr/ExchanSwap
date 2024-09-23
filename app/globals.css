@@ -767,7 +767,7 @@ ul {
   -webkit-box-shadow: 0px 0px 0px 10px rgba(0, 188, 212, 0.31);
   -moz-box-shadow: 0px 0px 0px 10px rgba(0, 188, 212, 0.31);
   box-shadow: 0px 0px 0px 10px rgba(0, 188, 212, 0.31);
-  color: #fff;
+  color: #ffffff;
   border-radius: 50%;
   height: 180px;
   width: 180px;
@@ -782,6 +782,7 @@ ul {
 }
 
 .pricing-table-style-4 .time {
+  color: #ffffff;
   font-size: 24px;
   font-weight: 300;
 }
@@ -885,6 +886,7 @@ body {
 .pricing-column-wrapper {
   min-width: 271px;
   text-align: center;
+  
 }
 
 .pricing-row-title {
@@ -1028,7 +1030,7 @@ body {
   background-color: #ee417c;
   color: rgb(255, 255, 255) !important;
 }
-
+time
 .gem-yellow {
   border-radius: 0px;
   border-color: #ff994e;
