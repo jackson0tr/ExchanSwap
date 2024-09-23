@@ -32,6 +32,14 @@ const ApiDocs: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, refetc
     });
   };
 
+  const handleAuth = () => {
+    if(user){
+      setOpen(false);
+    }else{
+      setOpen(true);
+    }
+  }
+
   return (
     <>
       <section
@@ -66,7 +74,10 @@ const ApiDocs: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, refetc
               <p className="text-[#fff] font-semibold py-2 text-lg">
                 ExchanSwap provides currency conversion, current and historical forex exchange rate and currency fluctuation data through REST API in json and xml formats compatible.
               </p>
-              <button onClick={() => setOpen(true)} className="px-6 py-2 border border-[#2190ff] custom_bg text-[#fff] font-bold rounded-full hover:bg-gray-200">
+              <button
+               onClick={handleAuth} 
+              //  onClick={() => setOpen(true)} 
+              className="px-6 py-2 border border-[#2190ff] custom_bg text-[#fff] font-bold rounded-full hover:bg-gray-200">
                 {
                   user ? <Link rel='preload' passHref href='/profile'>
                     Profile
